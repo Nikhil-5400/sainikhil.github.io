@@ -1,0 +1,442 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<style>
+    .dropdown-submenu {
+        position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+        }
+    .jumbotron-image{
+        background-image: url(static/bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        height: 500px;
+        margin-top: 0px;
+    }
+
+    .card-deck{
+        margin-top: -150px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    
+    .card-header{
+        font-weight: 800;
+    }
+
+    .card-title{
+        font-size: 24px;
+        font-weight: 200;
+        color: rgb(130, 128, 127);
+    }
+    .carousel-control-next,
+    .carousel-control-prev{
+        filter: invert(100%);
+    }
+
+</style>
+
+<body>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./static/styles.css">
+
+    <header id="header" class="fixed-top">
+      <div class="container-fluid d-flex justify-content-between align-items-center">
+  
+        <h1 class="logo me-auto me-lg-0"><a href="index.html">SAI</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar order-last order-lg-0">
+          <ul>
+            <li><a href="#hero" class="nav-link"><i class="bi bi-house navicon"></i>Home</a></li>
+            <li><a href="#about" class="nav-link"><i class="bi bi-person navicon"></i> About</a></li>
+            <li><a href="#experience" class="nav-link"><i class="bi bi-laptop-fill"></i> Experience</a></li>
+            <li><a href="#My_Works" class="nav-link"><i class="bi bi-images navicon"></i> Works</a></li>
+            <li><a href="#education" class="nav-link"><i class="bi bi-file-earmark-text navicon"></i> Education</a></li>
+            <li><a href="#resume" class="nav-link"><i class="bi bi-hdd-stack navicon"></i> Resume</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        
+  
+        <div class="header-social-links">
+        </div>
+  
+      </div>
+  
+    </header>
+
+    <section class="section  dark-background hero fade-effect" id="hero">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h2>Sai Nikhil</h2>
+        <p>I'm <span class="typed" data-typed-items=""></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+      </div>
+
+    </section>
+
+    <section class="section about light-background fade-effect" style="height: 40vh;" id="about">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-title">
+          <h2 class="text-center">ABOUT ME</h2>
+        </div>
+        
+        <div class="text-center">
+          <span>
+            Hi, I am Sai Nikhil Emukapati, I am a Software Engineer. I love solving problems and learning new things I always push myself to think innovatively in every aspect of my work. My Interests are in Coding, Competitive Programming, Designing and developing new things, managing at top positions, and also taking up all challenging work.. 
+          </span>
+        </div>
+        <br>
+      </div>
+    </section>
+
+<!-- SKILLS -->
+ <section class="section dark-background fade-effect"> 
+<div class="col-xxl-12 px-0 py-0 bg-body-secondary " id="skills">
+  <div class="container-fluid toolkit">
+    <div class="sideheading1">
+      <h3 class="skill-heading">SKILLSET</h3>
+    </div>
+    <div class="rows skillrow">
+      <div class="python skill"><i class="fab fa-python"></i>&nbsp;<p>PYTHON</p>
+      </div>
+      <div class="html skill"><i class="fab fa-html5"></i>&nbsp;<p>HTML5&nbsp;/&nbsp;<i class="fab fa-css3"></i>&nbsp;<p>CSS3</p>
+      </div>
+      <div class="css skill"><i class="fa fa-code"></i>&nbsp;<p>C</p>
+      </div>
+      <div class="js skill"><i class="fab fa-js"></i>&nbsp;<p>JAVASCRIPT</p>
+      </div>
+      <div class="clang skill"><i class="fab fa-brands fa-node-js"></i>&nbsp;<p>ExpressJS</p>
+      </div>
+      <div class="rlang skill"><i class="fab fa-r-project"></i>&nbsp;<p>R</p>
+      </div>
+      <div class="java skill"><i class="fab fa-java"></i>&nbsp;<p>JAVA/JSP/JDBC</p>
+      </div>
+      <div class="jsp skill"><i class="fab fa-brands fa-node-js"></i>&nbsp;<p>NodeJS</p>
+      </div>
+      <div class="mysql skill"><i class="fa fa-database"></i>&nbsp;<p>MySQL</p>
+      </div>
+    </div>
+    <div class="sideheading2">
+      <h3 class="skill-heading">TOOLS</h3>
+    </div>
+    <div class="rows toolrow">
+      <div class="workbench tool">
+        <p>MySQL WORKBENCH</p>
+      </div>
+      <div class="vscode tool">
+        <p>VS CODE</p>
+      </div>
+      <div class="eclipse tool">
+        <p>ECLIPSE</p>
+      </div>
+      <div class="figma tool">
+        <p>FIGMA</p>
+      </div>
+      <div class="canva tool">
+        <p>SPARK / HADOOP</p>
+      </div>
+      <div class="gephi tool">
+        <p>POSTMAN</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>  
+
+
+    <section class="education-section dark-background section fade-effect" id="experience">
+      <div class="container">
+        <div class="section-title">
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="date">July, 2021 - Aug, 2022</span>
+              <h3>Scriptbees</h3>
+              <p><strong>Software Engineer</strong></p>
+              <p>Developed an ecommerce system that revolutionized vendor data management, resulting in a 20% increase in merchant customer interactions. 
+                Managed over 30 application functions for administrators and vendors, optimizing user roles and operations. 
+                Reduced registration time by 30% through email-delivered passwords, enhancing user accessibility. Efficiently managed store data, enabling data export and oversight across multiple locations. 
+                Achieved a 20% reduction in page load times and a 30% increase in user engagement through advanced web optimization and seamless features. Optimized the web application using Spring Boot, Hibernate, MySQL, and HTML/CSS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-background fade-effec" style="min-height: 100vh;" id="My_Works">
+    <div class="container text-center" style="position: relative;">
+      <div class="section-title">
+        <h2 class="text-center">Projects</h2>
+      </div>
+    </div>
+
+
+<!-- PROJECTS -->
+<div class="album py-5 bg-body-tertiary" id="projects">
+  <div class="container">
+    <h1 class="projects-heading py-2">PROJECTS</h1>
+    <h3 class="py-3">Full Stack Development and UI/UX</h3>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 project-boxes">
+      <div class="col"> <!--Galactic Journal-->
+        <div class="card shadow-sm">
+          <img src="./Images/Reyoca_Rental.jpg" alt="galaticjournal" height="180px"
+            style="border-radius: 5px;">
+          <div class="card-body">
+            <p class="card-text"><strong>Car Rental Website</strong><br> <em> HTML | CSS | JavaScript | NodeJS | MySQL | AWS </em><br>
+              REYOCA (short for Rent Your Car), an innovative web application that empowers individuals to rent out their vehicles and enter the world of car-sharing. REYOCA offers a unique opportunity for car owners to monetize their idle vehicles, all while contributing to the eco-friendly car-sharing movement. </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a href="https://github.com/Nikhil-5400/Reyoca_CarRental" target="_blank" rel="noopener noreferrer"><button
+                    type="button" class="btn btn-sm btn-outline-secondary viewproject">View
+                    Project</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <div class="col"> <!--Galactic Journal-->
+              <div class="card shadow-sm">
+                <img src="./Images/Airline Management System.png" alt="galaticjournal" height="180px"
+                  style="border-radius: 5px;">
+                <div class="card-body">
+                  <p class="card-text"><strong>Airline Management System</strong><br> <em> Java | Swings | HTML | CSS | MySQL | NetBeans </em><br>
+                    Airline Management System is a desktop-based application that allows a user to access passenger's details, flight details and flight booking details. Through this system, we enabled users to manage passenger information efficiently, maintaining a comprehensive database of passengers and their reservations. </p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <a href="https://github.com/Nikhil-5400/Airline-Management-System/tree/main/Airline-Management-System-master" target="_blank" rel="noopener noreferrer"><button
+                          type="button" class="btn btn-sm btn-outline-secondary viewproject">View
+                          Project</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  </section>
+
+  <section class="education-section dark-background section fade-effect" id="education">
+    <div class="container">
+      <div class="section-title">
+        <h2>Education</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-content">
+            <span class="date">AUG, 2022 - MAY, 2024</span>
+            <h3>Rutgers University</h3>
+            <p><strong>Master of Science in Computer Science</strong></p>
+            <p>Relevant Courses:  Introduction to Artificial Intelligence(AI), Machine Learning(ML), Natural Language Processing(NLP), 
+              Introduction to cloud and Bigdata Systems, Introduction to Data Structures and Algorithms, Database Management Systems, 
+              Operating Systems, Data Analytics, Topics of Computers in Biomed, Information System for HealthCare, Software 
+              Engineering.</p>
+          </div>
+        </div>
+        <div class="timeline-item right">
+          <div class="timeline-content">
+            <span class="date">AUG, 2018 - March, 2022</span>
+            <h3>National Institute of Technology, Raipur(NITRR)</h3>
+            <p><strong>Bachelor of Technology in Electronics and Communication Engineering</strong></p>
+            <p>Relevant Courses: Engineering Graphics, Fundamentals of Computer Science, Information Technology, Data Structures, Computer Organization and Architecture, Operating Systems, Managerial Skills, Artificial Intelligence, Web Development</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+
+  <section class="section light-background fade-effect" id="resume">
+    <div class="section-title">
+        <h2>My Resume</h2>
+    </div>
+    <div class="pdf-container">
+        <iframe src="https://drive.google.com/file/d/1TYYfN3vuu6Om_K9QP6HSPv5L7LfHNU8i/preview" width="100%" height="600px" allow="autoplay"></iframe>
+    </div>
+    <div class="pdf-controls">
+        <a href="https://drive.google.com/file/d/1TYYfN3vuu6Om_K9QP6HSPv5L7LfHNU8i/view?usp=sharing" class="download-btn">Download PDF</a>
+    </div>
+</section>
+
+
+<footer class="dark-background fade-effect">
+  <div class="p-3 text-center text-muted">Sai Nikhil Emukapati</div>
+</footer>
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pjaaA8dDz/Smfj0PO7RsmLr8z4flBpkDD8n5J/jpRrmzX4+jpV4ZG8z4xMG7AT2x"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+      <script>
+        var typed = new Typed('.typed', {
+          strings: [ "Software Engineer", "Java Developer", "Full Stack Enthusiast"],
+          typeSpeed: 50,
+          backSpeed: 50,
+          backDelay: 2000,
+          loop: true
+        });
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.fade-effect');
+        
+        function checkFade() {
+          sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionBottom = section.getBoundingClientRect().bottom;
+            const windowHeight = window.innerHeight;
+            
+            if (sectionTop < windowHeight * 0.75 && sectionBottom > 0) {
+              section.classList.add('fade-in');
+            } else {
+              section.classList.remove('fade-in');
+            }
+          });
+        }
+        
+        window.addEventListener('scroll', checkFade);
+        checkFade(); // Check on initial load
+      });
+      </script>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const pdfEmbed = document.querySelector('embed');
+    const zoomInBtn = document.getElementById('zoomIn');
+    const zoomOutBtn = document.getElementById('zoomOut');
+    let currentZoom = 100;
+
+    zoomInBtn.addEventListener('click', function() {
+        currentZoom += 25;
+        pdfEmbed.style.width = `${currentZoom}%`;
+    });
+
+    zoomOutBtn.addEventListener('click', function() {
+        if (currentZoom > 100) {
+            currentZoom -= 25;
+            pdfEmbed.style.width = `${currentZoom}%`;
+        }
+    });
+});
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar');
+  
+  mobileNavToggle.addEventListener('click', function() {
+    navbar.classList.toggle('navbar-mobile');
+    this.classList.toggle('bi-list');
+    this.classList.toggle('bi-x');
+  });
+  
+  document.querySelectorAll('.navbar .dropdown > a').forEach(function(dropdownToggle) {
+    dropdownToggle.addEventListener('click', function(e) {
+      if (navbar.classList.contains('navbar-mobile')) {
+        e.preventDefault();
+        this.nextElementSibling.classList.toggle('dropdown-active');
+      }
+    });
+  });
+});
+
+      </script>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section');
+  const offset = 100; // Adjust this value as needed
+
+  // Function to handle smooth scrolling
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Remove active class from all links
+      navLinks.forEach(link => link.classList.remove('active'));
+      
+      // Add active class to the clicked link
+      this.classList.add('active');
+      
+      // Scroll to the corresponding section with offset
+      const sectionId = this.getAttribute('href');
+      const targetSection = document.querySelector(sectionId);
+      const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    });
+  });
+
+  // Function to update active link on scroll
+  function onScroll() {
+    let currentSection = '';
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - offset;
+      const sectionHeight = section.offsetHeight;
+      
+      if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentSection}`) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // Call onScroll to set the initial active link
+});
+
+
+      </script>
+</body>
+<script>
+    $('.dropdown-submenu > a').on("click", function(e) {
+    var submenu = $(this);
+    $('.dropdown-submenu .dropdown-menu').removeClass('show');
+    submenu.next('.dropdown-menu').addClass('show');
+    e.stopPropagation();
+});
+
+$('.dropdown').on("hidden.bs.dropdown", function() {
+    // hide any open menus when parent closes
+    $('.dropdown-menu.show').removeClass('show');
+});
+</script>
+</html>
