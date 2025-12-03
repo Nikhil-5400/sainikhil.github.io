@@ -1,199 +1,376 @@
-<!-- Improved Portfolio HTML Structure with Updated Colors and Skills Section -->
-<!DOCTYPE html>
+<!-- Complete rewritten portfolio HTML (single-file) -->
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Sai Nikhil</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <title>Sai Nikhil — Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
-    :root {
-      --primary: #4b7bec;
-      --secondary: #0f172a;
-      --accent: #38bdf8;
-      --text-light: #ffffff;
-      --text-dark: #1e293b;
-      --bg-light: #f8fafc;
-      --bg-dark: #0f172a;
+    :root{
+      --bg: #0b1220;
+      --card: #0f1724;
+      --muted: #9aa4b2;
+      --accent: #4f8cff;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
     }
 
-    body {
-      background-color: var(--bg-dark);
-      color: var(--text-light);
-      font-family: "Segoe UI", sans-serif;
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, var(--bg), #071022 80%);
+      color: #e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    header {
-      background: var(--secondary);
-      padding: 10px 0;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    /* Header */
+    header.navbar {
+      background: linear-gradient(90deg, rgba(79,140,255,0.12), rgba(79,140,255,0.05));
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
     }
+    .navbar-brand{font-weight:700;color:var(--accent)!important}
+    .nav-link{color:var(--muted)!important}
+    .nav-link.active{color:var(--accent)!important;font-weight:600}
 
-    .nav-link {
-      color: var(--text-light) !important;
-      font-weight: 500;
+    /* Hero */
+    .hero{
+      min-height:60vh;
+      display:flex;
+      align-items:center;
+      padding:7rem 0 4rem 0;
     }
+    .hero .name{font-size:2.6rem;font-weight:800;letter-spacing:0.6px}
+    .hero .subtitle{font-size:1.1rem;color:var(--muted)}
+    .typed{color:var(--accent);font-weight:700}
 
-    .nav-link.active {
-      color: var(--accent) !important;
-    }
+    /* Sections */
+    section{padding:60px 0}
+    .section-title{margin-bottom:2rem}
 
-    /* HERO */
-    #hero {
-      height: 90vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #1e3a8a, #0f172a);
-      text-align: center;
-    }
+    /* Card look */
+    .card.bg-card{background:linear-gradient(180deg,var(--card), rgba(10,14,20,0.8));border:1px solid rgba(255,255,255,0.03)}
 
-    #hero h2 {
-      font-size: 4rem;
-      font-weight: 800;
-    }
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+    .skill-card{padding:18px;border-radius:12px;background:var(--glass);border:1px solid rgba(255,255,255,0.03)}
+    .skill-title{font-weight:700;margin-bottom:6px}
+    .skill-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,0.03);color:var(--accent);font-weight:600}
 
-    #hero p span {
-      color: var(--accent);
-      font-weight: bold;
-    }
+    /* Progress */
+    .progress{height:10px;background:rgba(255,255,255,0.06);border-radius:999px}
+    .progress-bar{background:linear-gradient(90deg,var(--accent),#7ed0ff)}
 
-    /* ABOUT */
-    #about {
-      background: var(--bg-light);
-      color: var(--text-dark);
-      padding: 80px 0;
-    }
+    /* Projects */
+    .project-card img{border-radius:8px;object-fit:cover;height:180px}
 
-    .section-title h2 {
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,0.03)}
 
-    /* NEW SKILLS SECTION */
-    #skills {
-      background: var(--secondary);
-      padding: 80px 30px;
-      text-align: center;
-    }
-
-    .skill-category {
-      font-size: 26px;
-      margin-bottom: 30px;
-      font-weight: bold;
-      color: var(--accent);
-      text-transform: uppercase;
-    }
-
-    .skill-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .skill-box {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 12px;
-      transition: 0.3s;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-
-    .skill-box:hover {
-      transform: translateY(-5px);
-      background: #334155;
-    }
-
-    .skill-box i {
-      font-size: 40px;
-      margin-bottom: 10px;
-      color: var(--accent);
-    }
-
-    /* SECTION BACKGROUNDS */
-    .light-background {
-      background: var(--bg-light);
-      color: var(--text-dark);
-    }
-
-    .dark-background {
-      background: var(--bg-dark);
-    }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #1e293b;
+    /* Responsive tweaks */
+    @media (max-width:768px){
+      .hero .name{font-size:2rem}
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="fixed-top">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="logo"><a href="#hero" style="color: var(--accent); text-decoration: none;">SAI</a></h1>
-      <nav id="navbar" class="navbar">
-        <ul class="nav">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+  <!-- NAV -->
+  <header class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#hero">SAI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item ms-3"><a class="btn btn-sm btn-outline-light" href="#resume"><i class="bi bi-file-earmark-arrow-down"></i>&nbsp;Resume</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="hero" class="fade-effect">
-    <div>
-      <h2>Sai Nikhil</h2>
-      <p>I'm <span class="typed" data-typed-items="Software Engineer, Java Developer, Full Stack Developer"></span></p>
-    </div>
-  </section>
+  <!-- HERO -->
+  <main class="container hero" id="hero">
+    <div class="row w-100">
+      <div class="col-lg-7">
+        <div style="margin-top:40px">
+          <div class="name">Sai Nikhil</div>
+          <div class="subtitle mt-3">I build reliable, maintainable web applications and love solving algorithmic challenges.</div>
+          <div class="mt-3">I'm a <span class="typed" aria-hidden="true">Software Engineer</span></div>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" class="light-background fade-effect">
-    <div class="container">
-      <div class="section-title text-center"><h2>ABOUT ME</h2></div>
-      <p class="text-center mt-3">
-        Hi, I'm Sai Nikhil Emukapati, a passionate Software Engineer skilled in building modern, scalable, and impactful applications. I love solving real-world problems, learning new technologies, and bringing ideas to life.
-      </p>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION UPDATED -->
-  <section id="skills" class="fade-effect">
-    <div class="container">
-      <h2 class="skill-category">Skillset</h2>
-      <div class="skill-grid">
-        <div class="skill-box"><i class="fab fa-python"></i><p>Python</p></div>
-        <div class="skill-box"><i class="fab fa-html5"></i><p>HTML5 / CSS3</p></div>
-        <div class="skill-box"><i class="fab fa-js"></i><p>JavaScript</p></div>
-        <div class="skill-box"><i class="fab fa-java"></i><p>Java</p></div>
-        <div class="skill-box"><i class="fas fa-database"></i><p>MySQL</p></div>
-        <div class="skill-box"><i class="fab fa-node"></i><p>Node.js / Express</p></div>
+          <div class="mt-4 d-flex gap-2">
+            <a class="btn btn-primary btn-lg" href="#projects">See Projects</a>
+            <a class="btn btn-outline-light btn-lg" href="https://drive.google.com/file/d/1TYYfN3vuu6Om_K9QP6HSPv5L7LfHNU8i/view?usp=sharing" target="_blank">Download Resume</a>
+          </div>
+        </div>
       </div>
-
-      <h2 class="skill-category mt-5">Tools</h2>
-      <div class="skill-grid">
-        <div class="skill-box"><p>VS Code</p></div>
-        <div class="skill-box"><p>Postman</p></div>
-        <div class="skill-box"><p>MySQL Workbench</p></div>
-        <div class="skill-box"><p>Figma</p></div>
-        <div class="skill-box"><p>Hadoop / Spark</p></div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-end align-items-center">
+        <div class="card bg-card p-4" style="width:320px;border-radius:14px">
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:64px;height:64px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#7ed0ff)"></div>
+            <div>
+              <div style="font-weight:700">Sai Nikhil Emukapati</div>
+              <div style="color:var(--muted);font-size:0.9rem">Software Engineer</div>
+            </div>
+          </div>
+          <p class="mt-3" style="color:var(--muted);font-size:0.95rem">I enjoy building performant web apps, working on backend systems, and exploring machine learning.</p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#skills" class="btn btn-sm btn-outline-light">Skills</a>
+            <a href="#projects" class="btn btn-sm btn-outline-light">Projects</a>
+          </div>
+        </div>
       </div>
     </div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>About Me</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-8">
+          <p style="color:var(--muted)">Hi — I'm Sai. I build web applications with a focus on maintainability, performance, and a great developer experience. I have experience with Java, Spring, Node.js, React, and cloud platforms. I also enjoy teaching and mentoring — previously worked as a part-time lecturer helping students with algorithms and discrete mathematics.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-title"><h2>Skills & Tools</h2></div>
+
+      <div class="skills-grid">
+        <!-- Technical Skills -->
+        <div class="skill-card">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="skill-title">Technical</div>
+            <div class="skill-badge">Core</div>
+          </div>
+          <div class="mb-2">Python <small class="text-muted">(proficient)</small>
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div></div>
+          </div>
+          <div class="mb-2">Java / Spring
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:82%"></div></div>
+          </div>
+          <div class="mb-2">JavaScript / Node.js / Express
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:78%"></div></div>
+          </div>
+          <div class="mb-2">Databases (MySQL)
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:76%"></div></div>
+          </div>
+        </div>
+
+        <!-- Frontend / Design -->
+        <div class="skill-card">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="skill-title">Frontend</div>
+            <div class="skill-badge">UI</div>
+          </div>
+          <div class="mb-2">HTML / CSS
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:88%"></div></div>
+          </div>
+          <div class="mb-2">React (Basics)
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:65%"></div></div>
+          </div>
+          <div class="mb-2">Figma / Design Systems
+            <div class="progress mt-2"><div class="progress-bar" role="progressbar" style="width:60%"></div></div>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-card">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="skill-title">Tools</div>
+            <div class="skill-badge">Workflow</div>
+          </div>
+          <ul class="mb-0" style="color:var(--muted);padding-left:1rem">
+            <li>VS Code</li>
+            <li>Git / GitLab CI</li>
+            <li>Postman</li>
+            <li>MySQL Workbench</li>
+            <li>Hadoop / Spark (familiar)</li>
+          </ul>
+        </div>
+
+        <!-- Other -->
+        <div class="skill-card">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="skill-title">Other</div>
+            <div class="skill-badge">Soft</div>
+          </div>
+          <div style="color:var(--muted)">
+            <p class="mb-1">Teaching & Mentoring</p>
+            <p class="mb-1">Problem Solving / Competitive Programming</p>
+            <p class="mb-1">Product Thinking</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-title"><h2>Experience</h2></div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h5 class="mb-1">Synechon</h5>
+                <small class="text-muted">Software Engineer — Aug 2024 - Present</small>
+              </div>
+            </div>
+            <p class="mt-2" style="color:var(--muted)">Contributed to a large-scale banking project (Bank of America) building web applications and CMS components using Java, HTL and content fragment models. Improved publishing workflows and optimized performance through caching and lazy-loading.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <div>
+              <h5 class="mb-1">Rutgers University</h5>
+              <small class="text-muted">Part-time Lecturer — Jan 2023 - May 2024</small>
+            </div>
+            <p class="mt-2" style="color:var(--muted)">Led recitations for Discrete Structures II and supported grading for Algorithms. Held office hours serving ~80 students weekly.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <h5 class="mb-1">Scriptbees</h5>
+            <small class="text-muted">Software Engineer — Jul 2021 - Aug 2022</small>
+            <p class="mt-2" style="color:var(--muted)">Built an e-commerce vendor system with Spring Boot, Hibernate and MySQL; improved performance and user engagement through optimizations.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <h5 class="mb-1">Pedesis</h5>
+            <small class="text-muted">Software Developer — Jan 2021 - Jul 2021</small>
+            <p class="mt-2" style="color:var(--muted)">Worked on story development, unit testing, and CI/CD pipelines. Participated in full agile ceremonies and resolved bugs effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-title"><h2>Selected Projects</h2></div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card project-card bg-card p-3">
+            <img src="./Images/Reyoca_Rental.jpg" alt="Reyoca" class="w-100 mb-3">
+            <h5>REYOCA — Car Rental</h5>
+            <p style="color:var(--muted)">Full stack app (Node.js, MySQL, AWS) for peer-to-peer car rentals. Implemented booking logic, user roles, and payment workflows.</p>
+            <a href="https://github.com/Nikhil-5400/Reyoca_CarRental" target="_blank" class="btn btn-sm btn-outline-light">View on GitHub</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card project-card bg-card p-3">
+            <img src="./Images/Airline Management System.png" alt="Airline" class="w-100 mb-3">
+            <h5>Airline Management System</h5>
+            <p style="color:var(--muted)">Desktop application (Java, Swing, MySQL) to manage passengers, flights and bookings.</p>
+            <a href="https://github.com/Nikhil-5400/Airline-Management-System/tree/main/Airline-Management-System-master" target="_blank" class="btn btn-sm btn-outline-light">View on GitHub</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-title"><h2>Education</h2></div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <h5>Rutgers University</h5>
+            <small class="text-muted">M.S. Computer Science — Aug 2022 - May 2024</small>
+            <p style="color:var(--muted)">Relevant: AI, ML, NLP, Cloud & Big Data, Algorithms, DBMS.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card bg-card p-3">
+            <h5>NIT Raipur</h5>
+            <small class="text-muted">B.Tech — Electronics & Communication — Aug 2018 - Mar 2022</small>
+            <p style="color:var(--muted)">Relevant coursework: Data Structures, OS, Web Development.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME & CONTACT -->
+  <section id="resume">
+    <div class="container">
+      <div class="section-title"><h2>Resume</h2></div>
+      <div class="ratio ratio-16x9">
+        <iframe src="https://drive.google.com/file/d/1TYYfN3vuu6Om_K9QP6HSPv5L7LfHNU8i/preview" title="Resume" allowfullscreen></iframe>
+      </div>
+      <div class="mt-3 text-center">
+        <a href="https://drive.google.com/file/d/1TYYfN3vuu6Om_K9QP6HSPv5L7LfHNU8i/view?usp=sharing" class="btn btn-outline-light" target="_blank">Open / Download Resume</a>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <div>Sai Nikhil Emukapati © 2025</div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-start">© Sai Nikhil Emukapati</div>
+        <div class="col-md-6 text-end"><a href="mailto:youremail@example.com" style="color:var(--muted)">youremail@example.com</a></div>
+      </div>
+    </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    // Typed.js initialization
+    new Typed('.typed', {
+      strings: ['Software Engineer', 'Full Stack Developer', 'Java Developer'],
+      typeSpeed: 45,
+      backSpeed: 35,
+      backDelay: 1800,
+      loop: true
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('a.nav-link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href.startsWith('#')){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth', block:'start'});
+          document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
